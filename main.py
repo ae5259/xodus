@@ -18,14 +18,14 @@ def add_todo(xodo):
 					# adding todo
 					w_file.write("1." + xodo + '\n')
 					# log message
-					print(f"{colors.OKGREEN}XoDo has been added successfully!\n{colors.ENDC}List xodos: xodo list")
+					print(f"{colors.OKGREEN}XoDo has been added successfully!\n{colors.ENDC}List xodos: xodus list")
 				else:
 					# if it's not empty, get existing xodos
 					exist_xodos = r
 					# writing new xodo
 					w_file.write(exist_xodos + str(len(exist_xodos.split('\n'))) + "." + xodo + '\n')
 					# log message
-					print(f"{colors.OKGREEN}XoDo has been added successfully!\n{colors.ENDC}List xodos: xodo list")
+					print(f"{colors.OKGREEN}XoDo has been added successfully!\n{colors.ENDC}List xodos: xodus list")
 
 
 def xodo_list():
@@ -33,7 +33,7 @@ def xodo_list():
 		xodos = file.read().strip()
 		if len(xodos)==0:
 			print("No xodos!")
-			print(f"{colors.OKGREEN}To add xodo -> xodo add")
+			print(f"{colors.OKGREEN}To add xodo -> xodus add")
 			return
 		print(xodos) 
 
@@ -58,7 +58,7 @@ def main():
 
 	# command not found
 	if command not in commands:
-		print(f"{colors.FAIL}Command {command} is not found.\n\n{colors.ENDC}Guide: xodo guide")
+		print(f"{colors.FAIL}Command {command} is not found.\n\n{colors.ENDC}Guide: xodus guide")
 
 	# adding xodo
 	if command == "add":
