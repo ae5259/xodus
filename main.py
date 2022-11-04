@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+import time
 import os
 import sys
 from utils import xodo_text
@@ -27,6 +28,14 @@ def add_todo(xodo):
 					print(f"{colors.OKGREEN}XoDo has been added successfully!\n{colors.ENDC}List xodos: xodo list")
 
 
+def xodo_list():
+	with open('xodo.txt','rt') as file:
+		xodos = file.read().strip()
+		if len(xodos)==0:
+			print("No xodos!")
+			print(f"{colors.OKGREEN}To add xodo -> xodo add")
+			return
+		print(xodos) 
 
 
 def main():
@@ -52,5 +61,8 @@ def main():
 		xodo = input("Enter your xodo: ")
 		add_todo(xodo)
 
+	if command == 'list':
+		time.sleep(1)
+		xodo_list()
 
 main()
