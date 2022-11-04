@@ -3,7 +3,7 @@
 import time
 import os
 import sys
-from utils import xodo_text
+from utils import xodo_text, guide_text
 from utils import colors
 
 commands = ['list','add','done','current','guide','clear']
@@ -38,6 +38,10 @@ def xodo_list():
 		print(xodos) 
 
 
+def xodo_guide():
+	print(guide_text)
+
+
 def main():
 	# command validation
 	try:
@@ -64,5 +68,8 @@ def main():
 	if command == 'list':
 		time.sleep(1)
 		xodo_list()
+
+	if command == "guide":
+		xodo_guide()
 
 main()
