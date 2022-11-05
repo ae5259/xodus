@@ -2,6 +2,10 @@ version = "0.1"
 author = 'akumaru'
 from .colors import colors
 
+done_xodo = "✅"
+current_xodo = "🕧"
+unfinished_xodo = "⭕️"
+
 xodo_text = f"""xodus - CLI tool that helps to follow TODO.
 version: {version}
 author: {author}
