@@ -28,6 +28,20 @@ def add_todo(xodo):
 					# log message
 					print(f"{colors.OKGREEN}XoDo has been added successfully!\n{colors.ENDC}List xodos: xodus list")
 
+def mark_done_xodo(xodo_id):
+	with open("xodo.txt","rt") as r_file:
+		r = r_file.read().strip()
+		if len(r.split())==0:
+			print(f"{colors.FAIL}No xodos found.\n\n{colors.ENDC}Guide: xodus guide")
+		else:
+			xodo = r.split('\n')[int(xodo_id)-1]
+			new_xodo = xodo.replace(unfinished_xodo if unfinished_xodo in xodo else current_xodo, done_xodo)
+			r = r.replace(xodo, new_xodo)
+			with open('xodo.txt',"w+") as f:
+				f.write(r + '\n')
+			print(f"xodo is marked as done: {colors.OKGREEN}{new_xodo}")
+
+
 
 def xodo_list():
 	with open('xodo.txt','rt') as file:
@@ -50,9 +64,9 @@ def mark_current_xodo(xodo_id):
 		else:
 			xodo = r.split('\n')[int(xodo_id)-1]
 			new_xodo = xodo.replace(unfinished_xodo, current_xodo)
-			r = r.replace(r.split('\n')[int(xodo_id)-1], new_xodo)
+			r = r.replace(xodo, new_xodo)
 			with open('xodo.txt',"w+") as f:
-				f.write(r)
+				f.write(r + '\n')
 			print(f"Current xodo is: {colors.OKGREEN}{new_xodo}")
 def main():
 	# if file does not exist, create it
@@ -92,5 +106,15 @@ def main():
 
 	if command == "guide":
 		xodo_guide()
+
+	if command == "done":
+		time.sleep(1)
+		try:
+			id = sys.argv[2]
+		except IndexError:
+			print("Not enough arguments.")
+			return
+		mark_done_xodo(id)
+
 
 main()
