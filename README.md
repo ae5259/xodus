@@ -14,4 +14,4 @@ python main.py
 cp main.py xodus
 ```
 
-I will be happy, if you want some bugs and fix. Thanks.
+I will be happy, if you find some bugs and fix. Thanks.
