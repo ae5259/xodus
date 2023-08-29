@@ -4,7 +4,7 @@ Simple cli todo app written in Python.
 
 ### Installation 
 ```
-git clone https://github.com/akumawu/xodus
+git clone https://github.com/akumarujon/xodus
 cd xodus
 python main.py
 ```
