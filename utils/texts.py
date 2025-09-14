@@ -1,6 +1,7 @@
-version = "0.1"
-author = 'akumaru'
 from .colors import colors
+
+version = "0.1"
+author = "akumaru"
 
 done_xodo = "✅"
 current_xodo = "🕧"
@@ -27,4 +28,9 @@ Available commands:
 
 			list:
 				usage: xodus list
-				to get all xodos list"""
+				to get all xodos list
+                
+            done:
+				usage: xodus done <xodo_id>
+				to mark a xodo as done
+				"""

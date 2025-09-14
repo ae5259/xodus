@@ -1,15 +1,17 @@
 # xodo - CLI-todo.
+
 Simple cli todo app written in Python.
 
+### Installation
 
-### Installation 
 ```
-git clone https://github.com/akumarujon/xodus
+git clone https://github.com/ae5259/xodus
 cd xodus
 python main.py
 ```
 
 #### If you want to create executable file:
+
 ```
 cp main.py xodus
 ```
